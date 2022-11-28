@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>My Reminders</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col1">
+                <div class="card cardBody" style="width: 40rem;">
+                    <img src="https://images.unsplash.com/photo-1634245481935-1a496162ae15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1757&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- specific.id is from the idex.js. compared the :id params to the id array -->
+                        <h1>
+                            <%=specificId.title%>
+                        </h1>
+                        <div class="detailBox">
+                            <p class="detailP">
+                                <b>Details</b>: <%=specificId.details%>
+                            </p>
+                            <p class="detailP">
+                                <b>Time:</b>
+                                <%=specificId.time%>
+                            </p>
+                        </div>
+
+                    </div>
+                    <form class="formDetail" method="POST"
+                        action="/index/allReminders/<%=specificId.id%>?_method=DELETE">
+                        <a href="/index" class="btn btn-secondary">Add new reminder</a>
+                        <a href="/index/allReminders" class="btn btn-secondary">Show all reminders</a>
+                        <a href="/index/allreminders/<%=specificId.id%>/editReminder" class="btn btn-secondary">Edit
+                            Reminder</a>
+                        <button class="btn btn-secondary">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Alistair's To Do List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col1">
+                <div class="card cardBody" style="width: 40rem;">
+                    <img src="https://images.unsplash.com/photo-1634245481935-1a496162ae15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1757&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2>Reminders</h2>
+                        <ul>
+                            <%for(let allReminders of reminders){%>
+                                <li>
+                                    <i class="fas fa-lightbulb"></i>
+                                    <%=allReminders.title%>
+                                </li>
+                                <form method="POST" action="/index/allReminders/<%=allReminders.id%>?_method=DELETE">
+                                    <a href="/index/allReminders/<%=allReminders.id%>"
+                                        class="btn btn-secondary viewDetails">view
+                                        details</a>
+                                    <a href="/index/allReminders/<%=allReminders.id%>/editReminder"
+                                        class="btn btn-secondary viewDetails">Edit Details</a>
+                                    <button class="btn btn-secondary btnDel1">Delete</button>
+                                </form>
+                                <%}%>
+
+                        </ul>
+                        <a href="/index" class="btn btn-secondary">Add new reminder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

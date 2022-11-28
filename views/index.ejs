@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>My Reminders</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col1">
+                <div class="card cardBody" style="width: 40rem;">
+                    <img src="https://images.unsplash.com/photo-1634245481935-1a496162ae15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1757&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2>Reminders</h2>
+                        <!-- forms -->
+                        <form method='POST' action="/index/allReminders" class="form-group form-control">
+                            <label for="title">Enter Reminder</label>
+                            <div>
+                                <input type="text" id="title" name="title" placeholder="Enter Reminder">
+                            </div>
+
+                            <label for="details">Details</label>
+                            <div>
+                                <textarea name="details" id="details" cols="60" rows="5"></textarea>
+                            </div>
+                            <label for="time">Time</label>
+                            <div>
+                                <input type="time" id="time" name="time">
+                            </div>
+                            <button class="btn btn-secondary saveBtn">Save</button>
+                        </form>
+                        <a href="/index/allReminders" class="btn btn-secondary showBtn">Show Reminders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

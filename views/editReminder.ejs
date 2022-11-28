@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>My Reminders</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col1">
+                <div class="card cardBody" style="width: 40rem;">
+                    <img src="https://images.unsplash.com/photo-1634245481935-1a496162ae15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1757&q=80"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <form method="POST" action="/index/allReminders/<%=specificId2.id%>?_method=PATCH" <label
+                            for="editTitle">Edit Title</label>
+                            <div>
+                                <input type="text" id="editTitle" name="editTitle" value="<%=specificId2.title%>"
+                                    placeholder="<%=specificId2.title%>">
+                            </div>
+                            <label for="editDetails">Edit Details</label>
+                            <div>
+                                <textarea name="editDetails" id="editDetails" cols="60"
+                                    rows="5"><%=specificId2.details%></textarea>
+                            </div>
+                            <label for="editTitle">Edit Title</label>
+                            <div>
+                                <input type="time" id="editTime" name="editTime" value="<%=specificId2.time%>">
+                            </div>
+                            <button>Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
